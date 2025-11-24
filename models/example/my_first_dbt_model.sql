@@ -18,7 +18,7 @@ with source_data as (
 )
 
 select *, {{ ticket_sk() }}::string as hello
-from source_data
+froM source_data
 
 /*
     Uncomment the line below to remove records with null `id` values

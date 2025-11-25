@@ -51,6 +51,7 @@ jobs:
           pip install sqlfluff==3.5.0
           pip install sqlfluff-templater-dbt
           pip install dbt-databricks
+          dbt debug
           # 2. Lint only the changed files.
           export DBT_PROFILES_DIR=.
           sqlfluff lint ${{ steps.changed-files.outputs.all_changed_files }} --format github-annotation-native

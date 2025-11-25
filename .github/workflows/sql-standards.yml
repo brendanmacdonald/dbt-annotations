@@ -20,6 +20,7 @@ jobs:
           DB_HTTP_PATH: ${{ secrets.DBT_PATH }}
           DB_CI_TOKEN: ${{ secrets.DBT_TOKEN }}
           DBT_CATALOG: ${{ secrets.DBT_CATALOG }}
+          DBT_PROFILE: ${{ secrets.DBT_PROFILE }}
         run: |
           mkdir -p ~/.dbt
           cat << EOF > ~/.dbt/profiles.yml

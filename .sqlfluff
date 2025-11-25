@@ -1,6 +1,6 @@
 [sqlfluff]
 dialect = databricks
-templater = dbt
+templater = jinja
 rules = CP01, CP02, CP03, CP04, CP05
 exclude_rules = PRS
 

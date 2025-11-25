@@ -16,23 +16,24 @@ jobs:
 
       - name: Create dbt profiles.yml
         env: # Use the secrets defined in GitHub Settings
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_HTTP_PATH: ${{ secrets.DB_HTTP_PATH }}
-          DB_CI_TOKEN: ${{ secrets.DB_CI_TOKEN }}
+          DB_HOST: ${{ secrets.DBT_HOST }}
+          DB_HTTP_PATH: ${{ secrets.DBT_PATH }}
+          DB_CI_TOKEN: ${{ secrets.DBT_TOKEN }}
+          DBT_CATALOG: ${{ secrets.DBT_CATALOG }}
         run: |
           mkdir -p ~/.dbt
           cat << EOF > ~/.dbt/profiles.yml
           dbt_project_name: # Must match the name in your dbt_project.yml
-            target: ci_target
+            target: dev
             outputs:
               ci_target:
                 type: databricks
-                host: $DB_HOST
-                http_path: $DB_HTTP_PATH
-                token: $DB_CI_TOKEN
-                schema: default # Use a harmless schema
-                catalog: main # Use a harmless catalog (Unity Catalog)
+                schema: default
                 threads: 1
+                catalog: $DBT_CATALOG
+                host: $DBT_HOST
+                http_path: $DBT_PATH
+                token: $DBT_TOKEN
           EOF
 
       - name: Install SQLFluff & lint files

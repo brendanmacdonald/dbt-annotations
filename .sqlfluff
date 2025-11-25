@@ -5,7 +5,7 @@ rules = CP01, CP02, CP03, CP04, CP05
 
 [sqlfluff:templater:dbt]
 project_dir = .
-profiles_dir = .
+#profiles_dir = .
 dbt_skip_compilation_error = True
 #ignore = templating
 

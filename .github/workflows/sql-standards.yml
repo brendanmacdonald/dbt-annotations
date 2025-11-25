@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir -p ~/.dbt
           cat << EOF > ~/.dbt/profiles.yml
-          dbt_project_name: # Must match the name in your dbt_project.yml
+          veolia_lakehouse: # Must match the name in your dbt_project.yml
             target: dev
             outputs:
               ci_target:

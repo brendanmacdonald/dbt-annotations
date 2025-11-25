@@ -26,7 +26,7 @@ jobs:
           veolia_lakehouse: # Must match the name in your dbt_project.yml
             target: dev
             outputs:
-              ci_target:
+              dev:
                 type: databricks
                 schema: default
                 threads: 1

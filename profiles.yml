@@ -3,7 +3,7 @@ brendan_test:
   outputs:
     dev:
       type: databricks
-      host: <YOUR_REAL_HOST>
+      host: 127.0.0.1
       token: <YOUR_REAL_TOKEN>
       http_path: <YOUR_REAL_HTTP_PATH>
       catalog: hive_metastore

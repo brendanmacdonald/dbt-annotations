@@ -19,7 +19,7 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           # 1. Install SQLFluff
-          pip install sqlfluff==3.5.0
+          pip install sqlfluff==3.0
           pip install sqlfluff-templater-dbt
           pip install dbt-databricks
           # 2. Lint only the changed files.

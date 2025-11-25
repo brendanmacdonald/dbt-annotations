@@ -47,10 +47,12 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           # 1. Install SQLFluff
-          pip install click==8.3.0
-          pip install sqlfluff==3.5.0
-          pip install sqlfluff-templater-dbt
-          pip install dbt-databricks
+          pip install click==8.3.0 
+
+          pip install --upgrade sqlfluff==3.5.0 sqlfluff-templater-dbt dbt-databricks
+          #pip install sqlfluff==3.5.0
+          #pip install sqlfluff-templater-dbt
+          #pip install dbt-databricks
           dbt debug
           # 2. Lint only the changed files.
           export DBT_PROFILES_DIR=.

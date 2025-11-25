@@ -36,6 +36,11 @@ jobs:
                 token: $DBT_TOKEN
           EOF
 
+          # 3. VERIFICATION: Print the file content to the logs (temporarily)
+          echo "--- profiles.yml content (Verify name 'veolia_lakehouse') ---"
+          cat ~/.dbt/profiles.yml
+          echo "------------------------------------------------------------"
+
       - name: Install SQLFluff & lint files
         # Only run this step if the 'changed-files' action found files
         if: steps.changed-files.outputs.any_changed == 'true'

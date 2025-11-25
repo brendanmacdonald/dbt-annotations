@@ -1,0 +1,9 @@
+brendan_test:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      host: <YOUR_REAL_HOST>
+      token: <YOUR_REAL_TOKEN>
+      http_path: <YOUR_REAL_HTTP_PATH>
+      # ... rest of the config

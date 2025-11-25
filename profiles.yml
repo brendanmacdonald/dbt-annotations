@@ -6,4 +6,6 @@ brendan_test:
       host: <YOUR_REAL_HOST>
       token: <YOUR_REAL_TOKEN>
       http_path: <YOUR_REAL_HTTP_PATH>
-      # ... rest of the config
+      catalog: hive_metastore
+      schema: dbt_scratch
+      threads: 1

@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir -p ~/.dbt
           cat << EOF > ~/.dbt/profiles.yml
-          $DBT_PROFILE: # Must match the name in your dbt_project.yml
+          $DBT_PROFILE: 
             target: dev
             outputs:
               dev:
@@ -38,7 +38,7 @@ jobs:
           EOF
 
           # 3. VERIFICATION: Print the file content to the logs (temporarily)
-          echo "--- profiles.yml content (Verify name 'veolia_lakehouse') ---"
+          echo "--- profiles.yml content ---"
           cat ~/.dbt/profiles.yml
           echo "------------------------------------------------------------"
 

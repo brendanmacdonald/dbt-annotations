@@ -2,10 +2,12 @@
 dialect = databricks
 templater = dbt
 rules = CP01, CP02, CP03, CP04, CP05
+exclude_rules = PRS
 
-#[sqlfluff:templater:dbt]
-#project_dir = .
-#dbt_skip_compilation_error = True
+[sqlfluff:templater:dbt]
+project_dir = .
+#profiles_dir = .
+dbt_skip_compilation_error = True
 #ignore = templating
 
 #project_dir = .

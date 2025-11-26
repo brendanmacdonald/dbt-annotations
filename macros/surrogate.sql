@@ -1,1 +1,1 @@
-{% macro ticket_sk() -%} {%- endmacro -%}
+{% macro ticket_sk() -%} ticket_id {%- endmacro -%}
